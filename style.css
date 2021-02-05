@@ -1,0 +1,229 @@
+* , *:before, *:after{ 
+    margin: 0;
+    padding:0;
+    border: 0;
+    box-sizing:border-box;
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+a:visited{
+    color:inherit;
+}
+body {
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    --side-width: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-areas:
+        "header header header" 
+        ". logo ." 
+        ". search . " 
+        "footer footer footer";
+    grid-template-columns: minmax(var(--side-width),auto) minmax(350px,50vw) minmax(var(--side-width),auto);
+    grid-template-rows: 72px 1fr 2fr auto;
+}
+
+header,footer {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    padding: 0 20px 0 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(0,0,0,0.75);
+}
+
+header > nav > a{
+    padding-left: 15px;
+}
+
+.right-nav {
+    color: rgba(0,0,0,.87);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+a.squares {
+    margin: 0 10px ;
+    display:inline-block;
+    width:30px;
+    height:30px;
+    background-image: url(https://ssl.gstatic.com/gb/images/i1_1967ca6a.png);
+    background-size: 528px 68px;
+    background-position: -132px -38px;
+    opacity: .55;
+}
+
+a.squares:hover{
+    opacity: .85;
+}
+footer {
+    grid-area: footer;
+    background: #f2f2f2;
+    color: #70757a;
+    font-size: 14px;
+}
+.leaf-img{
+    height:14px;
+    padding-right: 4px;
+}
+
+footer > div {
+    border-top: 1px solid #dadce0;
+    padding: 12px 20px;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tldr > a {
+    margin: 0 10px;
+}
+
+
+
+
+@media screen and (max-width:800px){
+    .footer-links{
+        flex-direction: column;
+        align-items: center;
+    }
+    .tldr-mid {
+        order: 1;
+    }
+    .tldr-right {
+        order: 2;
+    }
+    .tldr-left {
+        order: 3;
+    }
+    .tldr {
+        line-height: 40px;
+    }
+}
+
+#logo { 
+    width: 272px;
+    height: 92px;
+    margin-bottom: 32px;
+    background-image:url("http://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
+    justify-self: center;
+    align-self: end;
+    grid-area: logo;
+}
+
+#search-bar{
+    height:46px;
+    grid-area: search;
+    padding: 0 20px;
+    width:100%;
+    justify-self: center;
+    border-radius: 24px;
+    border: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search-bar:hover{
+    border: 1px solid rgba(223,224,229,0);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+
+#search-bar > *{
+    display: inline-block;
+}
+
+#search-bar > input {
+    height:34px;
+    width: 80%;
+    outline: none;
+    font-size: 16px;
+}
+
+#search-bar > span{
+    display: block;
+    fill: currentColor;
+}
+
+.search-icon{
+    color: #9aa0a6;
+    width: 20px;
+    height: 20px;
+}
+
+.voice-search{
+    color: #9aa0a6;
+    width: 24px;
+    height: 24px;
+}
+
+#buttons{
+    grid-area: search;
+    margin-top: calc(36*2px);
+    align-self: top;
+    justify-self: center;
+}
+
+#buttons > input {
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 14px;
+    padding: 0 16px;
+    background: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    height: 36px;
+    color: #3c4043;
+}
+
+#buttons > input:hover{
+    border: 1px solid #dadce0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+a.sign-in {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    border-radius: 2px;
+    line-height: 28px;
+    text-align: left;
+    background-color: #4285f4;
+    border:1px solid #4285f4;
+    padding: 0 12px;
+}
+
+a.sign-in:hover{
+    text-decoration: none;
+}
+
+a.sign-in:active{
+    background: -webkit-linear-gradient(top,#3c7ae4,#3f76d3);
+    background: -moz-linear-gradient(top,#3c7ae4,#3f76d3);
+    background: linear-gradient(top,#3c7ae4,#3f76d3);
+    box-shadow: inset 2px 0 rgba(0,0,0,0.15);
+}
