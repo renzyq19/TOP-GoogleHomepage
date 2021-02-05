@@ -32,7 +32,7 @@ body {
         ". logo ." 
         ". search . " 
         "footer footer footer";
-    grid-template-columns: minmax(var(--side-width),auto) minmax(350px,50vw) minmax(var(--side-width),auto);
+    grid-template-columns: minmax(var(--side-width),auto) minmax(350px,40vw;) minmax(var(--side-width),auto);
     grid-template-rows: 72px 1fr 2fr auto;
 }
 
